@@ -1,0 +1,22 @@
+{
+  "name": "healthy_food",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/batyril/healthy_food.git"
+  },
+  "author": "il",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/batyril/healthy_food/issues"
+  },
+  "homepage": "https://github.com/batyril/healthy_food#readme",
+  "devDependencies": {
+    "eslint": "^8.25.0"
+  }
+}
