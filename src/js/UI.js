@@ -3,3 +3,4 @@ export const UI = {
   TABS_CONTENT: document.querySelectorAll('.tabcontent'),
   TABS_PARENT: document.querySelector('.tabheader__items'),
 };
+

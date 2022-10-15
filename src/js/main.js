@@ -28,3 +28,4 @@ UI.TABS_PARENT.addEventListener('click', (event) => {
 
 clearTabContent();
 showTabContent();
+
