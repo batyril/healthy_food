@@ -5,12 +5,13 @@ const TIMER = {
   SECONDS: document.querySelector("#seconds"),
 };
 
-const deadline = "2022-10-22T17:53";
+const deadline = "2022-12-22T17:53";
 
 function getTimeRemaining(endTime = deadline) {
   const convertTime = Date.parse(endTime);
   const nowTime = Date.parse(new Date());
   const difference = convertTime - nowTime;
+  //TODO: исравить магические числа
   const days = Math.floor(difference / (1000 * 60 * 60 * 24));
   const hours = Math.floor(
     (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -28,6 +29,7 @@ function getTimeRemaining(endTime = deadline) {
 
 function setClock(endTime = deadline) {
   const date = getTimeRemaining(endTime);
+  //TODO: исравить магические числа
   if (date.difference < 0) {
     TIMER.DAYS.textContent = "00";
     TIMER.HOURS.textContent = "00";
@@ -37,6 +39,7 @@ function setClock(endTime = deadline) {
   }
 
   for (const keys in date) {
+    //TODO: исравить магические числа
     if (date[keys] < 10) {
       date[keys] = `0${date[keys]}`;
     }
