@@ -1,11 +1,16 @@
+import postImage from "../img/tabs/post.jpg";
+import vegyImage from "../img/tabs/vegy.jpg";
+import eliteImage from "../img/tabs/elite.jpg";
+
 class ItemMenu {
-  constructor(title, description, price, src, alt, parentSelector) {
+  constructor(title, description, price, src, alt, parentSelector, ...classes) {
     this.title = title;
     this.description = description;
     this.price = price;
     this.src = src;
     this.alt = alt;
     this.transfer = 27;
+    this.classes = classes;
     this.parentSelector = document.querySelector(parentSelector);
     this.changeToRub();
   }
@@ -16,7 +21,10 @@ class ItemMenu {
 
   render() {
     const element = document.createElement("div");
-    element.classList.add("menu__item");
+    if (this.classes.length === 0) {
+      element.classList.add("menu__item");
+    }
+    element.classList.add(...this.classes);
     element.insertAdjacentHTML(
       "afterbegin",
       `
@@ -38,25 +46,29 @@ new ItemMenu(
   "Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко" +
     " из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков. ",
   "430",
-  "img/tabs/post.jpg",
+  postImage,
   "post",
-  ".menu__field > .container"
+  ".menu__field > .container",
+  "menu__item",
+  "menu__item__size-plus"
 ).render();
 
 new ItemMenu(
   "Меню Фитнес",
   "Меню Фитнес - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!",
   "229",
-  "img/tabs/vegy.jpg",
+  vegyImage,
   "vegy",
-  ".menu__field > .container"
+  ".menu__field > .container",
+  "menu__item"
 ).render();
 
 new ItemMenu(
   "Меню Премиум",
   "В меню Премиум мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!",
   "550",
-  "img/tabs/elite.jpg",
+  eliteImage,
   "vegy",
-  ".menu__field > .container"
+  ".menu__field > .container",
+  "menu__item"
 ).render();
